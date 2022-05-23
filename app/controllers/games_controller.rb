@@ -20,5 +20,6 @@ class GamesController < ApplicationController
     else
       @result = "Sorry, \"#{answer}\" is not in the English dictionary."
     end
+    @score = (answer.length) * 10
   end
 end
