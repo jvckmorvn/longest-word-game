@@ -1,0 +1,14 @@
+<div class="m-3">
+  <h1>Longest Word Game</h1>
+  <ul class="list-inline">
+    <% @letters_grid.each do |letter| %>
+      <li class="list-inline-item"><%= letter %></li>
+    <% end %>
+  </ul>
+  <form action="/score" method="POST" data-turbo="false">
+    <input type="text" name="answer"></input>
+    <input type="submit"></input>
+    <%= hidden_field_tag "letters_grid", @letters_grid %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+</div>
