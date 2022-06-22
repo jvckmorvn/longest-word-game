@@ -1,4 +1,3 @@
-require 'json'
 require 'open-uri'
 
 class GamesController < ApplicationController
@@ -15,11 +14,13 @@ class GamesController < ApplicationController
     on_grid = answer.downcase.chars.all? { |letter| answer.count(letter) <= letters_grid.downcase.count(letter) }
     if valid && on_grid
       @result = "Congratulations, \"#{answer}\" is a valid word!"
+      @score = (answer.length) * 10
     elsif valid
       @result = "Sorry, \"#{answer}\" is not on the grid."
+      @score = 0
     else
       @result = "Sorry, \"#{answer}\" is not in the English dictionary."
+      @score = 0
     end
-    @score = (answer.length) * 10
   end
 end

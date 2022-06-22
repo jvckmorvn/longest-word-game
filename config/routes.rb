@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'new', to: 'games#new'
+  root 'games#new'
   post 'score', to: 'games#score'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
