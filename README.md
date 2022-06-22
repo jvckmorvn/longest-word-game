@@ -8,5 +8,4 @@ Welcome to this fun little word game, based on a similar one found on Channel 4'
 ## Installation
 - Pull the project from this public repository.
 - Run `bundle install` in your terminal to install the necessary gems and dependencies.
-- Run `rails db:create db:migrate` in your terminal to set up the database.
 - Finally, run `rails server` and navigate to 'localhost:3000' in your web browser to start using the app!
