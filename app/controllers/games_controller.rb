@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'open-uri'
 
 class GamesController < ApplicationController
@@ -10,11 +12,11 @@ class GamesController < ApplicationController
     letters_grid = params[:letters_grid]
     url = "https://wagon-dictionary.herokuapp.com/#{answer}"
     serialized = URI.open(url).read
-    valid = JSON.parse(serialized)["found"]
+    valid = JSON.parse(serialized)['found']
     on_grid = answer.downcase.chars.all? { |letter| answer.count(letter) <= letters_grid.downcase.count(letter) }
     if valid && on_grid
       @result = "Congratulations, \"#{answer}\" is a valid word!"
-      @score = (answer.length) * 10
+      @score = answer.length * 10
     elsif valid
       @result = "Sorry, \"#{answer}\" is not on the grid."
       @score = 0
